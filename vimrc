@@ -71,8 +71,11 @@ set incsearch                   " Find as you type search
 set hlsearch                    " Highlight search terms
 set ignorecase                  " Case insensitive search
 set smartcase                   " Case sensitive when uc present
+
 set wildmenu                    " Show list instead of just completing
 set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
+set completeopt=noinsert,noselect,menuone
+
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 
 set autoread
@@ -602,6 +605,8 @@ if has_key(g:plugs, 'vim-easycomplete')
     noremap gd :EasyCompleteGotoDefinition<CR>
     noremap rn :EasyCompleteRename<CR>
     noremap gb :BackToOriginalBuffer<CR>
+
+    set updatetime=300
 endif
 
 """"""""""""""""""""""""""""""""""""""""
