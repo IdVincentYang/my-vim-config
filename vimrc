@@ -595,6 +595,7 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""
 " Plug 'https://github.com/jayli/vim-easycomplete'
+" [full config example](https://github.com/jayli/vim-easycomplete/blob/master/custom-config.md)
 if has_key(g:plugs, 'vim-easycomplete')
     " Highlight the symbol when holding the cursor
     let g:easycomplete_cursor_word_hl = 0
