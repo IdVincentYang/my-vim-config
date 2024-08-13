@@ -359,6 +359,11 @@ nnoremap <leader><space> i<space><esc>
 """"""""""""""""""""""""""""""""""""""""
 " internal plug: 'netrw' (https://shapeshed.com/vim-netrw/)
 
+let g:netrw_alto        = 0     " split window above
+let g:netrw_preview     = 1     " preview window split vertival
+let g:netrw_liststyle   = 3     " list view
+let g:netrw_winsize     = 30
+
 """"""""""""""""""""""""""""""""""""""""
 " Auto install plug manager: 'vim-plug'
 " search plug from: https://vimawesome.com
@@ -402,15 +407,6 @@ Plug 'vim-scripts/txt.vim'
 " https://github.com/vim-utils/vim-man
 Plug 'vim-utils/vim-man'
 call plug#end()
-
-function! PlugMappings()
-    let l:line = getline(".")
-
-    let l:name = expand("<cword>")
-    nnoremap <buffer> <silent> o :call netrw#BrowseX('https://google.com', 0)<CR>
-endfunction
-
-autocmd Filetype vim-plug call PlugMappings()
 
 " Automatically install missing plugins on startup
 autocmd VimEnter *
@@ -601,6 +597,9 @@ if has_key(g:plugs, 'vim-easycomplete')
     let g:easycomplete_cursor_word_hl = 0
     " Using nerdfont is highly recommended
     let g:easycomplete_nerd_font = 1
+
+    let g:easycomplete_diagnostics_next = "<M-n>"
+    let g:easycomplete_diagnostics_prev = "<M-p>"
 
     noremap gr :EasyCompleteReference<CR>
     noremap gd :EasyCompleteGotoDefinition<CR>
